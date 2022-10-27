@@ -1,11 +1,11 @@
 const express = require('express')
-const { getData, addData } = require('../controller/bmiController')
+const { addUserData, getUserData } = require('../controller/bmiController')
 const route = express.Router()
 
-// add data
-route.post('/addData', addData)
+// add person data
+route.post('/adduserData', addUserData)
 
-// get all data
-route.get('/bmi', getData)
+// get all people details
+route.get('/bmi', getUserData)
 
 module.exports = route
