@@ -44,12 +44,18 @@ Given JSON data stored in an array and if add more data then simply add in that 
 - High risk
 - Very high risk
 
-# Json Data
-
-{"Gender": "Male", "HeightCm": 171, "WeightKg": 96 }, {"Gender": "Male", "HeightCm": 161,
-"WeightKg":85 }, { "Gender": "Male", "HeightCm": 180, "WeightKg": 77 }, { "Gender": "Female", "HeightCm": 166,"WeightKg": 62}, {"Gender": "Female", "HeightCm": 150, "WeightKg": 70},{"Gender": "Female","HeightCm": 167, "WeightKg": 82} as the input with weight and height parameters of a person.
-
 # Tech
 - NodeJs
 
 # Project link
+- Add new detail
+![image](https://github.com/Yashaswi-Anand/BMI-category-and-health-risk/blob/master/screenshots/addUser.png)
+- BMI details
+![image](https://github.com/Yashaswi-Anand/BMI-category-and-health-risk/blob/master/screenshots/bmi.png)
+- number of overweight people
+![image](https://github.com/Yashaswi-Anand/BMI-category-and-health-risk/blob/master/screenshots/overweighted.png)
+
+# Json Data
+
+{"Gender": "Male", "HeightCm": 171, "WeightKg": 96 }, {"Gender": "Male", "HeightCm": 161,
+"WeightKg":85 }, { "Gender": "Male", "HeightCm": 180, "WeightKg": 77 }, { "Gender": "Female", "HeightCm": 166,"WeightKg": 62}, {"Gender": "Female", "HeightCm": 150, "WeightKg": 70},{"Gender": "Female","HeightCm": 167, "WeightKg": 82} as the input with weight and height parameters of a person.
