@@ -6,3 +6,21 @@ const data =[
     {"Gender": "Female", "HeightCm": 150, "WeightKg": 70},
     {"Gender": "Female","HeightCm": 167, "WeightKg": 82},
 ]
+
+exports.addData = async(req,res) =>{
+    try {
+        await data.push(req.body);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error, message: 'Internal server error.'});
+    }
+}
+
+exports.getData = async(req,res)=>{
+    try {
+        return res.status(200).json({ data: data, message: 'All data'});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error, message: 'Internal server error.'});
+    }
+}
