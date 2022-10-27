@@ -7,7 +7,7 @@ const userData = [
     { "Gender": "Female", "HeightCm": 167, "WeightKg": 82 },
 ]
 
-
+// getting BMI category and health risk
 const bmiCategoryAndHealthRisk = (bmi) => {
     // console.log(bmi);
     if (bmi <= 18.4) {
@@ -25,6 +25,7 @@ const bmiCategoryAndHealthRisk = (bmi) => {
     }
 }
 
+// calculate BMI of each user
 const calculateBMI = () => {
     const modefiedUserData = []
     for (let item of userData) {
@@ -36,6 +37,7 @@ const calculateBMI = () => {
     return modefiedUserData
 }
 
+// add new user data
 exports.addUserData = async (req, res) => {
     try {
         await userData.push(req.body);
@@ -46,6 +48,7 @@ exports.addUserData = async (req, res) => {
     }
 }
 
+// get all user BMI details
 exports.getUserData = async (req, res) => {
     try {
         let count = 0;
@@ -54,6 +57,21 @@ exports.getUserData = async (req, res) => {
             if (item.bmiCategory === 'Overweight') count++;
         }
         return res.status(200).json({ 'Number of overweighted people': count, message: 'BMI category & health risk', userDetails: userDetails });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ error, message: 'Internal server error.' });
+    }
+}
+
+// get number of overweighted people
+exports.noOfOverweight = async(req,res) =>{
+    try {
+        let overweightedPeople = 0;
+        const userDetails = await calculateBMI()
+        for (let item of userDetails) {
+            if (item.bmiCategory === 'Overweight') overweightedPeople++;
+        }
+        return res.status(200).json({ 'Number of overweighted people': overweightedPeople})
     } catch (error) {
         console.log(error);
         return res.status(500).json({ error, message: 'Internal server error.' });
